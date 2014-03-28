@@ -5,6 +5,7 @@
  */
 package interfata;
 
+import java.awt.Color;
 import javax.swing.UIManager;
 import liste.*;
 
@@ -22,7 +23,9 @@ public class MainWindow extends javax.swing.JFrame {
     public MainWindow() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        mesaj_Label.setText("");
+        
+        
         L = new Lista<>();
     }
 
@@ -40,6 +43,7 @@ public class MainWindow extends javax.swing.JFrame {
         addLast_Button = new javax.swing.JButton();
         deleteFirst_Button = new javax.swing.JButton();
         addDelete_TextField = new javax.swing.JTextField();
+        mesaj_Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +72,9 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        mesaj_Label.setForeground(new java.awt.Color(128, 0, 0));
+        mesaj_Label.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,7 +91,8 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(deleteFirst_Button)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addDelete_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 200, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mesaj_Label, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
                     .addComponent(list_TextField))
                 .addContainerGap())
         );
@@ -99,7 +107,8 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addLast_Button)
                     .addComponent(deleteFirst_Button)
-                    .addComponent(addDelete_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addDelete_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesaj_Label))
                 .addContainerGap())
         );
 
@@ -117,13 +126,18 @@ public class MainWindow extends javax.swing.JFrame {
 
         try {
             i = Integer.parseInt(addDelete_TextField.getText());
+            mesaj_Label.setText("");
+            addDelete_TextField.setText("");
         } catch (NumberFormatException nfe) {
             i = null;
+            mesaj_Label.setText("Nu ati introdus informatie corecta");
+            mesaj_Label.setForeground(new Color(128, 0, 0));
         }
         if(i != null){
             L.addLast(new Nod<>(i));
-        
-        list_TextField.setText(L.getListAsString());
+            list_TextField.setText(L.getListAsString());
+            mesaj_Label.setText("OK ");
+             mesaj_Label.setForeground(new Color(0, 128, 0));
         }
     }//GEN-LAST:event_addLast_ButtonActionPerformed
 
@@ -174,5 +188,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton deleteFirst_Button;
     private javax.swing.JButton exit_Button;
     private javax.swing.JTextField list_TextField;
+    private javax.swing.JLabel mesaj_Label;
     // End of variables declaration//GEN-END:variables
 }

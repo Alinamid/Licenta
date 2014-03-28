@@ -36,7 +36,8 @@
                       <Component id="deleteFirst_Button" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="addDelete_TextField" min="-2" pref="113" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="200" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="mesaj_Label" pref="196" max="32767" attributes="0"/>
                   </Group>
                   <Component id="list_TextField" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -56,6 +57,7 @@
                   <Component id="addLast_Button" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="deleteFirst_Button" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="addDelete_TextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mesaj_Label" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -101,6 +103,14 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="addDelete_TextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="mesaj_Label">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="80" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
